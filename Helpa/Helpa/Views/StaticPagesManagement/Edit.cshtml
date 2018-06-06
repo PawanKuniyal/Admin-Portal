@@ -1,0 +1,59 @@
+﻿@model Helpa.StaticPage
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    <link href="~/AdminALTcss/AdminLTE.css" rel="stylesheet" />
+    <link href="~/AdminALTcss/table.css" rel="stylesheet" />
+    <link href="~/AdminALTcss/font-awesome.min.css" rel="stylesheet" />
+    @using (Html.BeginForm())
+    {
+        @*@Html.AntiForgeryToken()*@
+
+        <div class="form-horizontal">
+            <h3 style="color:blue;">Edit</h3>
+            <hr />
+            <table>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.StaticPageId)
+
+                <tr>
+                    <td>@Html.LabelFor(model => model.PageTitle, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                    <td style="width:500px;">@Html.EditorFor(model => model.PageTitle, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PageTitle, "", new { @class = "text-danger" })</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.PageContent, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                    <td>@Html.EditorFor(model => model.PageContent, new { @class = "form-control required", style = "max-width:101% !important;" })</td>
+                    <td>@Html.ValidationMessageFor(model => model.PageContent, "", new { @class = "text-danger" })</td>
+                </tr>
+              
+                <tr>
+                    <td>@Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })</td>
+                    <td>@Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    <td>@Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })</td>
+                </tr>
+              
+            </table>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" style="margin-top:6px;" value="Update" class="btn btn-default" />
+                   
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a class="btn btn-default" style="width:164px; margin-top:-87px;margin-right:722px;" @Html.ActionLink("Back to List", "Index")</a>
+        </div>
+        </div>
+        @*@section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }*@
+   

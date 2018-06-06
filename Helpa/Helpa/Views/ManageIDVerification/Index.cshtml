@@ -1,0 +1,79 @@
+﻿@model List<Helpa.Document>
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<br />
+<br />
+
+
+
+<h3 style="color:blue;">Manage ID Verification</h3>
+
+<link href="~/logincss/style.css" rel="stylesheet" />
+<link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />
+<link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+<link href="~/AdminALTcss/table.css" rel="stylesheet" />
+<hr />
+<table class="container">
+
+    <tr>
+        <th>
+            @Html.DisplayName("DocumentType")
+        </th>
+        <th>
+            @Html.DisplayName("RowStatus")
+        </th>
+        <th>
+            @Html.DisplayName("CreatedDate")
+        </th>
+        <th>
+            @Html.DisplayName("UpdatedDate")
+        </th>
+       
+        <th>
+            @Html.DisplayName("Qualification")
+        </th>
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentType)
+            </td>
+            <td>
+                @{
+                    var buttonColor = "";
+                    var buttonName = "";
+                    if (item.RowStatus == "0")
+                    {
+
+                        buttonColor = "Orange";
+                        buttonName = "Deactive";
+                    }
+                    else
+                    {
+                        buttonColor = "Green";
+                        buttonName = "Active";
+                    }
+                }
+                <a class="btn btn-default" href="/ManageIDVerification/Index?UserId=@item.DocumentId" style="color:@buttonColor">@buttonName</a>  @*@Html.DisplayFor(modelItem => item.RowStatus)*@
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+            <td>@Html.DisplayFor(modelItem => item.UpdatedDate)</td>
+            @*<td>@Html.DisplayFor(modelItem => item.File.FileFolder)</td>*@
+            <td>@Html.DisplayFor(modelItem => item.Helper.Qualification)</td>
+        </tr>
+                    }
+</table>
+
+
+
+
+

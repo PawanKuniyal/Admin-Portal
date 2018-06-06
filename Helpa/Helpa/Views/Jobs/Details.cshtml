@@ -1,0 +1,77 @@
+﻿@model Helpa.Job
+
+@{
+    ViewBag.Title = "";
+}
+
+
+
+<br />
+<br />
+<center>
+    <style>
+        .status {
+            opacity: 1 !important;
+        }
+    </style>
+
+    <div>
+        <h3 style="color:blue;">Job's Details</h3>
+        <link href="~/logincss/style.css" rel="stylesheet" />
+        <link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />
+        <link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/AdminALTcss/table.css" rel="stylesheet" />
+        <hr />
+        <table class="container">
+            <thead>
+                <tr>
+                    <th><h1 style="color:white">Name</h1></th>
+                    <th><h1 style="color:white">Value</h1></th>
+
+                </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.JobTiltle)</td>
+                    <td>@Html.DisplayFor(model => model.JobTiltle)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.JobDescription)</td>
+                    <td>@Html.DisplayFor(model => model.JobDescription)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.JobType)</td>
+                    <td>@Html.DisplayFor(model => model.JobType)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.HelperType)</td>
+                    <td>@Html.DisplayFor(model => model.HelperType)</td>
+                </tr>
+              
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.CreatedDate)</td>
+                    <td>@Html.DisplayFor(model => model.CreatedDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.ExpiryDate)</td>
+                    <td>@Html.DisplayFor(model => model.ExpiryDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.UpdatedDate)</td>
+                    <td>@Html.DisplayFor(model => model.UpdatedDate)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.JobLocation.JobLocationName)</td>
+                    <td>@Html.DisplayFor(model => model.JobLocation.JobLocationName)</td>
+                </tr>
+              
+                
+            </tbody>
+        </table>
+
+    </div>
+    <p>
+       
+        <a class="btn btn-default" style="width:147px;margin-right: 916px;" @Html.ActionLink("Back to List", "Index")
+    </p>

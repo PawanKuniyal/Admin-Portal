@@ -1,0 +1,50 @@
+﻿@model Helpa.StaticPage
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<center>
+    <div>
+        <h3 style="color:blue;">Details Information's</h3>
+        <link href="~/logincss/style.css" rel="stylesheet" />
+        <link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />
+        <link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/AdminALTcss/table.css" rel="stylesheet" />
+        <hr />
+        <table class="container">
+            <thead>
+                <tr>
+                    <th><h1 style="color:black">Name</h1></th>
+                    
+                    <th><h1 style="color:black">Value</h1></th>
+
+                </tr>
+            </thead>
+            <tbody>
+               <tr>
+                   <td>@Html.DisplayNameFor(model => model.PageTitle)</td>                  
+                   <td>@Html.DisplayFor(model => model.PageTitle)</td>
+               </tr>
+                    
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.PageContent)</td>                   
+                    <td>@Html.DisplayFor(model => model.PageContent)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.CreatedDate)</td>                    
+                    <td>@Html.DisplayFor(model => model.CreatedDate)</td>
+                </tr>
+
+               
+            </tbody>
+        </table>
+    </div>
+    <p>
+       
+        <a class="btn btn-default" style="width:147px;margin-right: 930px;" @Html.ActionLink("Back to List", "Index")
+    </p>
+</center>

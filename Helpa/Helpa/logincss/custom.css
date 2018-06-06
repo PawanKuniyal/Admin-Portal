@@ -1,0 +1,129 @@
+.addLesson li.resp-tab-item.hor_1.resp-tab-active{ border:none !important; background-color: #06a3cc !important ; margin: 0 !important; color: #fff; position: relative;     padding: 13px 70px 10px 70px !important; border-right: 1px solid #e0e0e0 !important;}
+.addLesson .resp-tabs-list li{background-color: #f1f1f1 !important;}
+.addLesson .resp-tabs-list li:hover{ background-color: #06a3cc !important ; color: #fff;}
+.addLesson .resp-tab-content{border:none; padding: 41px 0 18px;}
+.addLesson .resp-tabs-list li{color: #6c6c6c; font-size: 18px; font-weight: normal;     padding: 13px 70px 10px 70px;   margin:0 ; border-right: 1px solid #e0e0e0;}
+.addLesson .resp-tabs-list li:last-child{border-right: 0;}
+.addLesson ul.resp-tabs-list.hor_1 {    background-color: #f1f1f1;    width: 100%;    float: left; }
+.addLesson li.resp-tab-item.hor_1.resp-tab-active:before{position: absolute; content: ''; border-top: 15px solid #06a3cc;    border-right: 10px solid transparent;    border-left: 10px solid transparent;    bottom: -15px; left: 50%; -webkit-transform: translateX(-50%);
+-moz-transform: translateX(-50%);
+-ms-transform: translateX(-50%);
+-o-transform: translateX(-50%);
+transform: translateX(-50%)
+}
+.btnCurrent{background: transparent url(../images/addLessonImg.png) no-repeat; height: 21px; width: 21px;    border: none;    padding: 0;    vertical-align: middle;    outline: none;}
+.btnCurrent:hover{background-position: 0 -48px;}
+.currentLearning span , .chooseTemplate p{    font-size: 18px;    color: #6c6c6c;    vertical-align: middle;    display: inline-block;}
+.currentLearning .form-group{margin-top: 20px;}
+.currentLearning .form-group .form-control , .innterBasic .form-group .form-control{    width: 410px;    border: 1px solid #e7e7e7;    height: 40px;    border-radius: 0; outline: none; box-shadow: none; font-size: 15px;}
+.form-group .form-control::-webkit-input-placeholder {
+	color: #838383;
+}
+.form-group .form-control:-moz-placeholder { /* Firefox 18- */
+	color: #838383;  
+}
+.form-group .form-control::-moz-placeholder {  /* Firefox 19+ */
+	color: #838383;  
+}
+.form-group .form-control:-ms-input-placeholder {  
+	color: #838383;  
+}
+.chooseTemplate {margin-top: 38px;}
+.chooseTemplate h6{display: block; color: #6c6c6c; font-size: 15px; margin-top: 0;} 
+.chooseTemplate ul li{text-align: center; display: inline-block; margin-right: 40px;     position: relative}
+.chooseTemplate ul li i{height: 87px; width: 87px; border-radius: 50%; border:1px solid #d9d9d9; position: relative; display: block;}
+.chooseTemplate ul li i img{position: absolute; top:0; right: 0; left: 0; bottom: 0; margin: auto;}
+.chooseTemplate ul{margin-top: 16px;}
+.chooseTemplate span {    position: absolute;    right: -12px;    top: 52px;}
+/* HTML5 Boilerplate accessible hidden styles */
+[type="radio"] {
+	border: 0; 
+	clip: rect(0 0 0 0); 
+	height: 1px; margin: -1px; 
+	overflow: hidden; 
+	padding: 0; 
+	position: absolute; 
+	width: 1px;
+}
+.chooseTemplate label{cursor: pointer;     margin-bottom: 9px;}
+
+[type="radio"] + span {
+	display: block;
+}
+
+/* the basic, unchecked style */
+[type="radio"] + span:before {
+	content: '';
+	display: inline-block;
+	width: 1em;
+	background-color: #fff;
+	height: 1em;
+	vertical-align: -0.25em;
+	border-radius: 50%;
+	border: 0.125em solid #fff;
+	box-shadow:0 0 0 1px #dadada;
+	margin-right: 0.75em;
+	transition: 0.5s ease all;
+}
+
+/* the checked style using the :checked pseudo class */
+[type="radio"]:checked + span:before {
+	background: #06a3cc;
+	box-shadow: 0 0 0 1px #dadada;
+}
+
+#horizoltalTbs{border:1px solid #e8e8e8;}
+.innterBasic .form-group {    margin-bottom: 20px;}
+.addLesson #horizoltalTbs .resp-tab-content{ padding: 29px 33px 9px;}
+.LngTbs{width: 850px;}
+.addLesson  #horizoltalTbs .resp-tabs-list li{    padding:11px 55px 10px 55px;}
+.addLesson   #horizoltalTbs li.resp-tab-item.hor_1.resp-tab-active{    padding:11px 55px 10px 55px !important;}
+.innterBasic .form-group .form-control{    width:100%; }
+.btn.dropdown-toggle.btn-default{background-color: transparent;     border-color: #e7e7e7; outline: none; box-shadow: none; border-radius: 0;padding: 9px 12px 9px;}
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){width: 100%;}
+.bootstrap-select .dropdown-toggle:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .bootstrap-select .dropdown-toggle:focus{outline: none !important;}
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover{background-color: transparent; border-color: #e7e7e7;}
+.bootstrap-select.btn-group .dropdown-menu li{display: block;}
+.bootstrap-select.btn-group .dropdown-toggle .filter-option{color: #999999;}
+.bootstrap-select.btn-group .dropdown-toggle .caret{   width: 40px;  height: 100%;    margin: 0; top: 0; right: 0 ; border:0; border-left: 1px solid #ccc; background: url(../images/down-arrow.png) no-repeat; background-position:  center center;}   
+.basicBtn{background-color: #06a3cc; border-radius: 0; border: none; outline: none; color: #fff; font-size: 18px;  padding: 11px 38px 10px; margin-right: 11px; margin-top: 11px;}
+.basicBtn.cancil {    box-shadow: 0 0 0 1px #b2b2b2 inset;    background-color: transparent;    color: #888888; padding: 11px 30px 10px;}
+.basicBtn.add:hover, .basicBtn.add:focus{background-color: #0591b6 ; }
+.basicBtn.cancil:hover, .basicBtn.cancil:focus{background-color: #b2b2b2; color: #fff; }
+.addLesson{    margin-top: 16px;}
+/*--media queries--*/
+
+@media (max-width:991px){
+	.addLesson li.resp-tab-item.hor_1.resp-tab-active{padding: 13px 63px 10px !important}
+	.LngTbs {    width: 100%;}
+	.addLesson #horizoltalTbs .resp-tabs-list li {  padding: 13px 42px 10px;}
+    .addLesson .resp-tabs-list li{    padding: 13px 60px 10px 64px;}
+}
+
+@media (max-width:768px){
+	.LngTbs {		margin-top: 35px;	}
+	.addLesson h2.resp-accordion {    border: 1px solid #c1c1c1;    font-size: 15px;    margin: 0 0 6px;    padding: 15px 22px;}
+	.addLesson h2.resp-tab-active, .addLesson h2.resp-accordion:hover {border:1px solid #06a3cc !important; background-color: #06a3cc !important; color: #fff;   padding: 15px 22px !important; }
+	h2.resp-tab-active span.resp-arrow{border-color: #fff transparent; }
+	.addLesson .resp-tab-content {		border: medium none;		padding: 28px 24px;	}
+	.main-container .innterBasic  .col-md-6{padding:0;}
+	#horizoltalTbs{border:none}
+}
+
+@media (max-width:480px){
+	.currentLearning .form-group .form-control, .innterBasic .form-group .form-control{width: 100%;}
+	.chooseTemplate label {    position: relative;}
+	.chooseTemplate ul li {    margin-right: 0;    width: 48%; margin-bottom: 10px;}
+	.chooseTemplate ul li:nth-child(even){float: right;}
+	.addLesson .resp-tab-content {    padding: 20px;}
+	.basicBtn{ margin-right: 8px;}
+}
+
+
+
+
+
+
+
+
+

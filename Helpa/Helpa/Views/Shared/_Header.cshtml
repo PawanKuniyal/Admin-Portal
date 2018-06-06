@@ -1,0 +1,54 @@
+﻿<header class="main-header">
+    
+    @* BEGIN Logo *@
+    <a href="@Url.Action("About", "Home")" class="logo">
+        @* Mini logo for sidebar 50x50 pixels *@
+        <span class="logo-mini"><b>H</b>elpa</span>
+        @* Logo for regular state and mobile devices *@
+        <span class="logo-lg"><b>SampleCode</b></span>
+    </a>
+    @* END Logo *@
+    @* BEGIN Header *@
+    <nav class="navbar navbar-static-top">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                @* BEGIN Messages *@
+                <li class="dropdown messages-menu">
+                    
+                  
+                </li>
+              
+                    <li class="dropdown user user-menu" id="dsfds">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        @*<img src="~/Content/img/user.jpg" class="user-image" alt="User Image">*@
+                        <span class="hidden-xs" >LogOut</span>
+                    </a>
+                    
+                </li>
+             
+               
+                @* END Control Sidebar Toggle Button *@
+            </ul>
+        </div>
+    </nav>
+</header>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+    $('#logout').click(function()
+    {
+        debugger;
+    $.ajax({
+        url:"@Url.Action("LogOff", "Account")",
+        data:{},
+        type:"Post",
+        success: function (data)
+        {
+            debugger;
+            window.location.href = "@Url.Action("login","Account")"
+        }
+    });
+    });
+</script>

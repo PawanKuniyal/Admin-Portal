@@ -1,0 +1,49 @@
+﻿@using Helpa.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+@{
+    Layout = null;
+}
+
+
+<script src="~/Scripts/jquery-3.2.1.js"></script>
+<link href="~/logincss/StyleSheet1.css" rel="stylesheet" />
+
+<div class="login">
+  
+   
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+
+    <div class="text-danger hideDiv" style="color:white" >
+        @if (TempData["Mgs"] != null)
+        {
+            <h3>
+                @TempData["Mgs"].ToString()
+            </h3>
+        }
+    </div>
+    <script>
+        $(".hideDiv").delay(5000).fadeOut();
+    </script>
+        <h1>Login</h1>
+
+            @Html.TextBoxFor(x => x.Email, new { @placeholder = "Username", @required = "required" })
+
+
+            @Html.TextBoxFor(x => x.Password, new { @placeholder = "Password", @required = "required", @type = "password" })
+
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Login </button>
+
+        }
+
+
+    @*</form>*@
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

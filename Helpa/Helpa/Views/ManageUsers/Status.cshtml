@@ -1,0 +1,26 @@
+﻿@model Helpa.AspNetUser
+
+@using (Html.BeginForm("Status", "ManageUsers", FormMethod.Post))
+
+{
+<div>
+    <h3 style="color:blue;">Manage User's</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RowStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RowStatus)
+        </dd>
+
+       
+
+    </dl>
+</div>
+}
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

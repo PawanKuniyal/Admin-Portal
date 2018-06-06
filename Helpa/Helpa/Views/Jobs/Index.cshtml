@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Helpa.Job>
+
+@{
+    ViewBag.Title = "";
+}
+
+<br />
+<h3 style="color:blue;">Job's</h3>
+<br />
+<br />
+
+
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+<link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+<link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<table class="table">
+    <tr>        
+        <th>
+            @Html.DisplayNameFor(model => model.JobTiltle)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.JobType)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.RowStatus)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        
+       
+      
+       
+    
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            <p class="tb_content">@Html.DisplayFor(modelItem => item.JobTiltle)</p>
+</td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+        
+        <td>
+            @{
+               
+                var buttonColor = "";
+                var buttonName = "";
+                if (item.Status == true)
+                {
+                    buttonColor = "red";
+                    buttonName = "Enable";
+                }
+                else
+                {
+                    buttonColor = "green";
+                    buttonName = "Disbale";
+                }
+            }
+            <a class="btn btn-default" href="/Jobs/Status?id=@item.JobId" style="color:@buttonColor">@buttonName</a> @*@Html.DisplayFor(modelItem => item.Status)*@
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.RowStatus)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+       
+        
+       
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.JobId }) |*@
+            <a class="btn btn-default" @Html.ActionLink("Details", "Details", new { id = item.JobId }) 
+            <a class="btn btn-default" @Html.ActionLink("Remove", "Delete", new { id = item.JobId }, new { onclick = "return confirm('Are sure wants to delete?');" })
+        </td>
+    </tr>
+}
+
+</table>

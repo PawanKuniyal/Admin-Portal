@@ -1,0 +1,611 @@
+
+@media screen and (max-width:1200px) {
+ 
+    
+   .owl-theme .owl-controls{ position: relative; margin-top:-70px;}
+    .add-course1 .item-box{ margin: 14px 2px 20px 2px;}
+    .add-course2 .header-with-icon li{ font-size:16px;}
+    .input-style, .register .input-style{ width:300px !important; }
+    .change-password .main-div ul{width:100%; }
+    .course-details .owl-theme .owl-controls
+    {
+     margin-top:0;
+    }
+   .course-details  .owl-controls .owl-buttons .owl-prev,.course-details  .owl-controls .owl-buttons .owl-next
+    {
+     bottom: -95px;
+            z-index: 999;
+    }
+    .manage_employee .header-space
+{
+  width:6%;  
+}
+    .manage-course .header-space {
+    width: 25%;
+}
+     .manage_employee .manage-table .grade, .manage-course .manage-table .add
+    {
+        display:none;
+    }
+     .manage_employee .manage-table .action
+    {
+       width:40%;
+    }
+     .manage-course .manage-table .action
+    {
+        width:60%;
+    }
+     .employee_dashboard .main-Bar .subject li
+    {
+        padding-right: 20%;
+    }
+       .My_Dashboard .col-md-6.secont-block {
+    width: 71%;
+       padding: 0;
+}
+   .My_Dashboard .dashboard .col-md-12
+    {
+        overflow: auto;
+    }
+    .My_Dashboard .main-Bar
+    {
+        width:900px !important;
+    }
+    .My_Dashboard .main-Bar .subject li
+    {
+    padding: 25px 0 20px 11px;
+    padding-right: 47% !important;
+    }
+    .My_Dashboard .main-Bar .subject
+    {
+        width:10%;
+    }
+    .My_Dashboard .ranks .space-rank
+    {
+        width:13%;
+    }
+    .My_Dashboard .main-Bar .bar
+    {
+        width:88%;
+    }
+    .My_Dashboard .ranks
+    {
+        width:900px;
+    }
+    .My_Dashboard .ranks .list > ul
+    {
+        margin-left:0px;
+    }
+    .My_Dashboard .ranks .list li
+    {
+        width: 130px;
+    }
+    .My_Dashboard .main-Bar .bar .arrow::after
+    {
+        position:relative;
+    }
+       .My_Dashboard .dashboard-user .left, .My_Dashboard .dashboard-education .left, .My_Dashboard .dashboard-file .left
+    {
+        position: absolute;
+    }
+.My_Dashboard .dashboard-user .right, .My_Dashboard .dashboard-education .right, .My_Dashboard .dashboard-file .right
+    {
+        width:98%;
+    }
+    .My_Dashboard .first-block2
+    {
+        width:22%;
+    }
+    .subscription .pro .color-price-tag::after
+    {
+        content: '';
+    width: 10px;
+    height: 0;
+    border-left: 141px solid transparent;
+    border-right: 146px solid transparent;
+    border-top: 39px solid #f58b64;
+    
+   
+    }   
+    .subscription .basic .color-price-tag::after{
+      content: '';
+    width: 10px;
+    height: 0;
+    border-left: 141px solid transparent;
+    border-right: 146px solid transparent;
+    border-top: 39px solid #F9D444;
+    
+}
+.subscription .plus .color-price-tag::after{
+      content: '';
+    width: 10px;
+    height: 0;
+    border-left: 141px solid transparent;
+    border-right: 146px solid transparent;
+    border-top: 39px solid #9ed01f;
+   
+}
+   .manage-course .manage-table .action a span
+    {
+    margin-right: 5px;
+    }
+    
+    
+    
+    
+}
+
+
+@media screen and (max-width:991px) {
+    .add-employee .col-md-6{ width: 48%; display: inline-block; }
+    footer .about-us-quick > .col-md-3{  
+        width: 24%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 6px;}
+    .final .top-links{ width: 32%; display: inline-block; vertical-align: top;}
+    .main-container .col-md-6{ width:48%; display: inline-block; vertical-align: top;}
+    .course-details .course-duration{width:45%;}
+   .testimonial .owl-theme .owl-controls{margin: 0;}
+     .slider-div .item h1 {
+        font-size: 71.65px;}
+header .slider-div, header .slider-div img{ height: auto; }
+    
+    .about_us .aboutus-Intro-div .about-us{
+        width:60%; vertical-align: middle;
+    }
+    .about_us .aboutus-Intro-div .About_us_intro{ width:38%; vertical-align: middle;}
+    .about_us .Our-imssion img{ height: 160px;}
+    .about_us .Out-team .item{ width:48%; display:inline-block;}
+    
+    .add-course1 .item-box{width: 32%; display: inline-block;}
+    .add-course1.row
+    {
+        text-align: center;
+    }
+    
+    .add-course2 .col-md-8{
+        width:60% !important;
+    vertical-align: top;
+        display:inline-block;
+    }
+    .add-course2 .col-md-4.right-side
+    {
+        width:39% !important;
+        vertical-align: top;
+        display:inline-block;
+        
+    }
+    .add-course2 .item-box{
+        width:48% ;display:inline-block;
+    }
+    .login .login-div
+    {
+        width:70%;
+    }
+    .contact-div.contact-us .row .col-md-4 , .contact-div.contact-us .row .col-md-8
+    {
+        width:48%;
+        display:inline-block;
+        vertical-align: top;
+        
+    }
+    .contact_us .talk-to-us ul li .validate-code
+    {
+        width:70%;
+    }
+   .manage_employee .header-space {
+    width: 86%;
+    margin-top: 20px;
+}
+    .manage-course .header-space {
+    width: 6%;
+}
+    .manage-course .manage-table .add, .manage_employee .manage-table .grade, .manage_employee .manage-table .Position, .manage_employee .manage-table .email
+    {
+        display:none;
+    }
+    .manage_employee .manage-table .action
+    {
+        width:34%;
+    }
+     .manage-course .table-bordered
+    {
+     width:750px;
+    }
+    .manage-course .table-div
+    {
+        overflow:auto;
+    }
+   .employee_dashboard .main-Bar .subject li
+    {
+        padding-right: 26%;
+    }
+    .My_Dashboard .col-md-4
+    {
+        width:32%;
+        display:inline-block;
+        vertical-align:top;
+    }
+    .My_Dashboard .first-block2 {
+     width: 26% !important;
+}
+    .My_Dashboard .dashboard-user .left, .My_Dashboard .dashboard-education .left, .My_Dashboard .dashboard-file .left
+    {
+        position: absolute;
+    }
+.My_Dashboard .dashboard-user .right, .My_Dashboard .dashboard-education .right, .My_Dashboard .dashboard-file .right
+    {
+        width:98%;
+    }
+    
+     .subscription .pro .color-price-tag::after
+    {
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 39px solid #f58b64;
+   
+    }   
+    .subscription .basic .color-price-tag::after{
+      content: '';
+    width: 10px;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 39px solid #F9D444;
+    
+}
+.subscription .plus .color-price-tag::after{
+      content: '';
+    width: 10px;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 39px solid #9ed01f;
+   
+}
+    
+ .subscription .col-md-4
+    {
+        width:32%;
+        display:inline-block;
+        vertical-align: top;
+    }
+    .subscription .balck-layout
+    {
+            width: 87.5%;
+    }
+       
+    
+    
+    
+    
+    
+}
+
+
+
+@media screen and (max-width:768px){ 
+    .header .logo-div{width: 20%}
+    
+    .header .header-menu {
+    display: inline-block;
+    width: 79%;
+    text-align: right;
+    padding-right: 2%;
+        
+}
+    .slider-div .item h1 {
+        font-size: 71.65px;}
+header .slider-div, header .slider-div img{ height: auto; }
+  
+    .add-course #txtDescription{    width: 73%;
+    margin: 0 13.5%; }
+   .register .register-div .validate-code
+    {
+        width:70%;
+    } 
+    .dashboard .col-md-12
+    {
+        overflow: auto;
+    }
+    .employee_dashboard .main-Bar
+    {
+        width:700px;
+    }
+    .employee_dashboard .main-Bar .subject li
+    {
+        padding-right: 27%;
+    }
+    
+}
+@media screen and (max-width:767px) {
+    
+  .add-employee .col-md-6{ width: 100%; }
+    footer .news-letter > ul > li{ width:270px; }
+    footer .about-us-quick > .col-md-3{ width: 80%; padding:0 10%;  display: inline-block;}
+ .navbar-toggle{ margin-top: -10px; font-size:18px; color:gray ; }
+    .search-box{ width: 10% !important; vertical-align: top;  } 
+    .search-box > ul > .input-li {
+        right: 7.6%;
+    top: 87px;
+    }
+    .header ul.ul-menu li, .header .header-menu > div{ width: 100%; text-align:left;}
+    .navbar-collapse, .header .header-menu{ width:100%; text-align: left;  }
+    .header ul.ul-menu li a{ text-align: left; padding:10px 40px;}
+    .header .logo-div{ width: 100% !important; text-align: center; }
+    .menu { width: 95%;}
+    .search-box { width: 2% !important;}    
+     .final .top-links{ width: 100%; margin: 0 auto; padding:0 15%;}
+    .main-container .col-md-6{ width: 100%; margin: 0 auto; padding:0 15%;}
+    .slider-div .item h1 { font-size: 38.65px;}
+    .slider-div .item h2{font-size: 18.65px;}
+    .slider-div .item h3{display: none;}
+    .about_us .Our-imssion img{ height: 160px;}
+    .about_us .Out-team .item{ width:100%; padding-right:15%;
+        padding-left:15%;  display:inline-block;}
+     .about_us .aboutus-Intro-div .about-us,
+    .about_us .aboutus-Intro-div .About_us_intro
+    {
+        width:100%; vertical-align: middle; padding:0 15%;
+    }
+    .add-employee input[type="button"]{ margin-left:13%; }
+    .add-course1 .item-box
+    {
+     width:40%;
+    
+    }
+     .add-course2 .col-md-8{
+        width:100% !important;
+    vertical-align: top;
+        display:inline-block;
+    }
+    .add-course2 .col-md-4.right-side
+    {
+        width:100% !important;
+        vertical-align: top;
+        display:inline-block;
+        
+    }
+    .add-course2 .item-box{
+        width:30% ;display:inline-block;
+        vertical-align: top;
+    }
+    .add-course2 .clearfix
+    {
+        display: none;
+    }
+     .login .login-div
+    {
+        width:80%;
+    }
+    .contact-div.contact-us .row .col-md-4 , .contact-div.contact-us .row .col-md-8
+    {
+        width:100%;
+        padding:0 15%;
+        margin:0 auto;
+        
+    }
+    .contact_us .Map img {
+    width: 100%;
+    height: 196px;
+}
+    .course-details .slider-container
+    {
+        margin-left: 0px;
+    }
+   
+    .course-details  .owl-controls .owl-buttons .owl-prev, .course-details  .owl-controls .owl-buttons .owl-next
+    {
+     position:absolute; 
+        top:49px;
+    }
+    
+  
+    
+    .manage-course .round-button
+    {
+        margin-top:20px;
+        display: inline-block;
+    }
+    .employee_dashboard .Assigned-div
+    {
+        margin-bottom:40px;
+    }
+    .My_Dashboard .col-md-4
+    {
+        width: 100%;
+    }
+    .My_Dashboard .first-block
+    {
+        padding-left:15px;
+    }
+    .My_Dashboard .first-block2, .My_Dashboard .col-md-6.secont-block
+    {
+        width:100% !important;
+        padding-left:15px;
+    }
+    .My_Dashboard .weekly select
+    {
+        margin:0 10px 0 0;
+    }
+    .My_Dashboard .add-new {
+    float: left;
+}
+    .employee_dashboard .dashboard .title
+    {
+        margin:0;
+    }
+    .My_Dashboard .weekly
+    {
+        width:100%;
+    }
+    
+    .subscription .col-md-4
+    {
+        width:90%;
+        margin:0 5%;
+        display:inline-block;
+    }
+    .subscription .basic .color-price-tag::after,
+    .subscription .pro .color-price-tag::after,
+    .subscription .plus .color-price-tag::after
+    {
+        border:0px;
+    }
+    .subscription .color-price-tag
+    {
+        padding-bottom:39px;
+    }
+    .subscription .col-md-4 .add-course
+    {
+        margin-top:12px;
+    }
+    
+    
+    
+    
+    
+    /*  -------- Nav Bar --------------- */
+  .customNav {height:inherit!important;}
+ .overlay {top:0;height: inherit; padding-bottom:20px;}
+ .overlay .closebtn {  font-size: 40px; right: 20px; top: 0;}
+.overlay-content { margin-top:0;}
+.mpzero { margin: 0; padding: 0 15px;}
+    
+      /*  -------- Nav Bar --------------- */
+    
+    .subscription .balck-layout {
+    width: 94.5%;
+}
+    
+    
+}
+
+
+@media screen and (max-width:550px) {
+     .login .login-div
+    {
+        width:98%;
+    }
+ .add-course1 .item-box
+    {
+     width:60%;
+    
+    }
+    .add-course2 .item-box{
+        width:48% ;
+    }
+    .add-course2 .col-md-12.accordian ul li 
+    {
+     width:100%;
+    }
+    .add-course2 .col-md-12.accordian ul li a::after
+    {
+       border:0px !important
+    }
+     .change-password .login .login-div, .register .login-div
+    {
+        padding:20px;
+    }
+        .subscription .balck-layout {
+    width: 93.5%;
+}
+    
+}
+
+
+
+@media screen and (max-width:479px) {
+    .input-style, .register .input-style
+    {
+        width:177px !important;
+    }
+    .search-box a{    margin-left: -20px;}
+.search-box > ul > .input-li {
+    right: 10.5%;
+}
+   .final .top-links{  padding:0 5%;}
+    .main-container .col-md-6{ padding:0 5%;}  
+    .slider-div .item a{display: none;}
+    .owl-theme .owl-controls{margin-top: -33px;}
+    .about_us .Out-team .item{  padding-right:5%;
+        padding-left:5%;  display:inline-block;}
+     .about_us .aboutus-Intro-div .about-us,
+    .about_us .aboutus-Intro-div .About_us_intro
+    {
+       vertical-align: middle; padding:0 5%;
+    }
+   .add-course #txtDescription {
+    width: 96%;
+    margin: 0 2%;
+}
+    .add-employee input[type="button"] {
+    margin-left: 2%;
+}
+    .add-course1 .item-box
+    {
+     width:80%;
+    
+    }
+    .add-course1 .start-new-course input[type="text"]
+    {
+        width:184px;
+    }
+     .add-course2 .item-box{
+        width:100% ;
+    }
+    .login .login-div
+    {
+        padding:10%;
+    }
+      .contact-div.contact-us .row .col-md-4 , .contact-div.contact-us .row .col-md-8
+    {
+        width:100%;
+        padding:0 5%;
+        margin:0 auto;
+        
+    }
+    .change-password .main-div li div
+    {
+    width: 100%;
+    background: #E4E4E4;
+        
+    }
+   
+   .change-password .login .login-div .dot-sign
+    {
+        display:none;
+    }
+    .login .login-div .remeber-me, .login .login-div .pull-right
+    {
+        width:100%;
+        text-align: left;
+        padding:6px 0; 
+    }
+ .employee_dashboard .toggle-header ul li h1
+    {
+        font-size: 24px;
+    }
+    #myModal .modal-content
+    {
+    width: 239px;
+    margin: 0 auto;
+    height: auto;
+        
+    }
+    
+    .My_Dashboard .weekly select
+    {
+         margin: 0 10px 10px 0;
+    }
+    
+    .subscription .balck-layout {
+    width: 91%;
+}
+    
+    
+    
+    
+}

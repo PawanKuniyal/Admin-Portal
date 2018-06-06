@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowStatus" Type="bit" Nullable="false" />
+    <Property Name="GenderId" Type="int" />
+    <Property Name="ProfileImage" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="AverageRating" Type="int" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationName" Type="nvarchar(max)" />
+    <Property Name="LocationGeography" Type="geography" />
+    <Property Name="RowStatus" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationId" />
+    </Key>
+    <Property Name="NotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="false" />
+    <Property Name="ReceiverId" Type="int" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" />
+    <Property Name="RowStatus" Type="nvarchar" MaxLength="1" />
+    <Property Name="NotificationState" Type="nvarchar" MaxLength="1" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ReadDate" Type="datetime" />
+    <Property Name="NotificationType" Type="nvarchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="StaticPages">
+    <Key>
+      <PropertyRef Name="StaticPageId" />
+    </Key>
+    <Property Name="StaticPageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageTitle" Type="nvarchar" MaxLength="255" />
+    <Property Name="PageContent" Type="text" />
+    <Property Name="PageType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserLogs">
+    <Key>
+      <PropertyRef Name="UserLogId" />
+    </Key>
+    <Property Name="UserLogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="DeviceId" Type="nvarchar(max)" />
+    <Property Name="RowStatus" Type="nvarchar" MaxLength="1" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Name="DocumentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileId" Type="int" Nullable="false" />
+    <Property Name="HelperId" Type="int" Nullable="false" />
+    <Property Name="DocumentType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="FileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileFolder" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Carousels">
+    <Key>
+      <PropertyRef Name="CarouselId" />
+    </Key>
+    <Property Name="CarouselId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageId" Type="int" Nullable="false" />
+    <Property Name="HelperId" Type="int" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JobLocation">
+    <Key>
+      <PropertyRef Name="JobLocationId" />
+    </Key>
+    <Property Name="JobLocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobLocationName" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobLocationGeography" Type="geography" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationGeography" Type="geography" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Favourates">
+    <Key>
+      <PropertyRef Name="FavourateId" />
+    </Key>
+    <Property Name="FavourateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="HelperId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReviewAndRating">
+    <Key>
+      <PropertyRef Name="ReviewId" />
+    </Key>
+    <Property Name="ReviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="HelperId" Type="int" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="Review" Type="nvarchar" MaxLength="500" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReviewComments">
+    <Key>
+      <PropertyRef Name="ReviewCommentId" />
+    </Key>
+    <Property Name="ReviewCommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReviewId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ReviewComment" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HelperServices">
+    <Key>
+      <PropertyRef Name="HelperServiceId" />
+    </Key>
+    <Property Name="HelperServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="HelperId" Type="int" Nullable="false" />
+    <Property Name="LocationId" Type="int" />
+    <Property Name="LocationType" Type="int" Nullable="false" />
+    <Property Name="HourPrice" Type="bit" Nullable="false" />
+    <Property Name="MinHourPrice" Type="money" />
+    <Property Name="MaxHourPrice" Type="money" />
+    <Property Name="DayPrice" Type="bit" Nullable="false" />
+    <Property Name="MinDayPrice" Type="money" />
+    <Property Name="MaxDayPrice" Type="money" />
+    <Property Name="MonthlyPrice" Type="bit" Nullable="false" />
+    <Property Name="MinMonthPrice" Type="money" />
+    <Property Name="MaxMonthPrice" Type="money" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HelperServiceScope">
+    <Key>
+      <PropertyRef Name="HelperServiceScopeId" />
+    </Key>
+    <Property Name="HelperServiceScopeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HelperServiceId" Type="int" Nullable="false" />
+    <Property Name="HelperScopeId" Type="int" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Scopes">
+    <Key>
+      <PropertyRef Name="ScopeId" />
+    </Key>
+    <Property Name="ScopeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="ScopeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Helpers">
+    <Key>
+      <PropertyRef Name="HelperId" />
+    </Key>
+    <Property Name="HelperId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="50" />
+    <Property Name="Experience" Type="int" />
+    <Property Name="MinAgeGroup" Type="int" />
+    <Property Name="MaxAgeGroup" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JobPrice">
+    <Key>
+      <PropertyRef Name="JobPriceId" />
+    </Key>
+    <Property Name="JobPriceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hourly" Type="bit" Nullable="false" />
+    <Property Name="Daily" Type="bit" Nullable="false" />
+    <Property Name="Monthly" Type="bit" Nullable="false" />
+    <Property Name="MinPrice" Type="money" />
+    <Property Name="MaxPrice" Type="money" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jobs">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedUserId" Type="int" Nullable="false" />
+    <Property Name="JobTiltle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JobDescription" Type="varchar(max)" Nullable="false" />
+    <Property Name="JobType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="HelperType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="TimeId" Type="int" Nullable="false" />
+    <Property Name="PriceId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JobScope">
+    <Key>
+      <PropertyRef Name="JobScopeId" />
+    </Key>
+    <Property Name="JobScopeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobServiceId" Type="int" Nullable="false" />
+    <Property Name="ScopeId" Type="int" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobServices">
+    <Key>
+      <PropertyRef Name="JobServiceId" />
+    </Key>
+    <Property Name="JobServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobTime">
+    <Key>
+      <PropertyRef Name="JobTimeId" />
+    </Key>
+    <Property Name="JobTimeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sunday" Type="bit" Nullable="false" />
+    <Property Name="Monday" Type="bit" Nullable="false" />
+    <Property Name="Tuesday" Type="bit" Nullable="false" />
+    <Property Name="Wednesday" Type="bit" Nullable="false" />
+    <Property Name="Thursday" Type="bit" Nullable="false" />
+    <Property Name="Friday" Type="bit" Nullable="false" />
+    <Property Name="Saturday" Type="bit" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recievers">
+    <Key>
+      <PropertyRef Name="ReceiverId" />
+    </Key>
+    <Property Name="ReceiverId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" Nullable="false" />
+    <Property Name="ReceiverName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReceiverGenderId" Type="int" Nullable="false" />
+    <Property Name="RecieverAge" Type="int" Nullable="false" />
+    <Property Name="RowStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Carousels_Files_FileId">
+    <End Role="Files" Type="Self.Files" Multiplicity="1" />
+    <End Role="Carousels" Type="Self.Carousels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Files">
+        <PropertyRef Name="FileId" />
+      </Principal>
+      <Dependent Role="Carousels">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Carousels_Helpers_HelperId">
+    <End Role="Helpers" Type="Self.Helpers" Multiplicity="1" />
+    <End Role="Carousels" Type="Self.Carousels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Helpers">
+        <PropertyRef Name="HelperId" />
+      </Principal>
+      <Dependent Role="Carousels">
+        <PropertyRef Name="HelperId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUsers_dbo_Locations_Locations_LocationId">
+    <End Role="Locations" Type="Self.Locations" Multiplicity="0..1" />
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="AspNetUsers">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Notifications_dbo_AspNetUsers_ReceiverId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="ReceiverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Notifications_dbo_AspNetUsers_SenderId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notifications">
+        <PropertyRef Name="SenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserLogs_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="UserLogs" Type="Self.UserLogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLogs">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_Files_FileId">
+    <End Role="Files" Type="Self.Files" Multiplicity="1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Files">
+        <PropertyRef Name="FileId" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="FileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_Helpers_HelperId">
+    <End Role="Helpers" Type="Self.Helpers" Multiplicity="1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Helpers">
+        <PropertyRef Name="HelperId" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="HelperId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Favourates_Helpers_HelperId">
+    <End Role="Helpers" Type="Self.Helpers" Multiplicity="1" />
+    <End Role="Favourates" Type="Self.Favourates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Helpers">
+        <PropertyRef Name="HelperId" />
+      </Principal>
+      <Dependent Role="Favourates">
+        <PropertyRef Name="HelperId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HelperServices_Helpers_HelperId">
+    <End Role="Helpers" Type="Self.Helpers" Multiplicity="1" />
+    <End Role="HelperServices" Type="Self.HelperServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Helpers">
+        <PropertyRef Name="HelperId" />
+      </Principal>
+      <Dependent Role="HelperServices">
+        <PropertyRef Name="HelperId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HelperServices_Locations">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="HelperServices" Type="Self.HelperServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="HelperServices">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HelperServices_Services_ServiceId">
+    <End Role="Services" Type="Self.Services" Multiplicity="1" />
+    <End Role="HelperServices" Type="Self.HelperServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="HelperServices">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HelperServiceScope_HelperScopes_ScopeId">
+    <End Role="Scopes" Type="Self.Scopes" Multiplicity="1" />
+    <End Role="HelperServiceScope" Type="Self.HelperServiceScope" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scopes">
+        <PropertyRef Name="ScopeId" />
+      </Principal>
+      <Dependent Role="HelperServiceScope">
+        <PropertyRef Name="HelperScopeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HelperServiceScope_HelperServices_HelprServiceId">
+    <End Role="HelperServices" Type="Self.HelperServices" Multiplicity="1" />
+    <End Role="HelperServiceScope" Type="Self.HelperServiceScope" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HelperServices">
+        <PropertyRef Name="HelperServiceId" />
+      </Principal>
+      <Dependent Role="HelperServiceScope">
+        <PropertyRef Name="HelperServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_JobLocation_JobLocationId">
+    <End Role="JobLocation" Type="Self.JobLocation" Multiplicity="1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobLocation">
+        <PropertyRef Name="JobLocationId" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_Price_PriceId">
+    <End Role="JobPrice" Type="Self.JobPrice" Multiplicity="1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobPrice">
+        <PropertyRef Name="JobPriceId" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="PriceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Jobs_Times_TimeId">
+    <End Role="JobTime" Type="Self.JobTime" Multiplicity="1" />
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobTime">
+        <PropertyRef Name="JobTimeId" />
+      </Principal>
+      <Dependent Role="Jobs">
+        <PropertyRef Name="TimeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobScope_JobService_JobServiceId">
+    <End Role="JobServices" Type="Self.JobServices" Multiplicity="1" />
+    <End Role="JobScope" Type="Self.JobScope" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobServices">
+        <PropertyRef Name="JobServiceId" />
+      </Principal>
+      <Dependent Role="JobScope">
+        <PropertyRef Name="JobServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobScope_Scope_ScopeId">
+    <End Role="Scopes" Type="Self.Scopes" Multiplicity="1" />
+    <End Role="JobScope" Type="Self.JobScope" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scopes">
+        <PropertyRef Name="ScopeId" />
+      </Principal>
+      <Dependent Role="JobScope">
+        <PropertyRef Name="ScopeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobServices_Job_JobId">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+    <End Role="JobServices" Type="Self.JobServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="JobServices">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobServices_Serviecs_ServiceId">
+    <End Role="Services" Type="Self.Services" Multiplicity="1" />
+    <End Role="JobServices" Type="Self.JobServices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="JobServices">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recievers_Jobs_JobId">
+    <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+    <End Role="Recievers" Type="Self.Recievers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jobs">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="Recievers">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReviewAndRating_Helpers_HelperId">
+    <End Role="Helpers" Type="Self.Helpers" Multiplicity="1" />
+    <End Role="ReviewAndRating" Type="Self.ReviewAndRating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Helpers">
+        <PropertyRef Name="HelperId" />
+      </Principal>
+      <Dependent Role="ReviewAndRating">
+        <PropertyRef Name="HelperId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReviewComments_Reviews_Reviewid">
+    <End Role="ReviewAndRating" Type="Self.ReviewAndRating" Multiplicity="1" />
+    <End Role="ReviewComments" Type="Self.ReviewComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReviewAndRating">
+        <PropertyRef Name="ReviewId" />
+      </Principal>
+      <Dependent Role="ReviewComments">
+        <PropertyRef Name="ReviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scopes_Services_ServiceId">
+    <End Role="Services" Type="Self.Services" Multiplicity="1" />
+    <End Role="Scopes" Type="Self.Scopes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="Scopes">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HelpaModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locations" EntityType="Self.Locations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StaticPages" EntityType="Self.StaticPages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogs" EntityType="Self.UserLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="DOC" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="FIL" store:Type="Tables" />
+    <EntitySet Name="Carousels" EntityType="Self.Carousels" Schema="IMG" store:Type="Tables" />
+    <EntitySet Name="JobLocation" EntityType="Self.JobLocation" Schema="LCN" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="LCN" store:Type="Tables" />
+    <EntitySet Name="Favourates" EntityType="Self.Favourates" Schema="NTW" store:Type="Tables" />
+    <EntitySet Name="ReviewAndRating" EntityType="Self.ReviewAndRating" Schema="RTG" store:Type="Tables" />
+    <EntitySet Name="ReviewComments" EntityType="Self.ReviewComments" Schema="RTG" store:Type="Tables" />
+    <EntitySet Name="HelperServices" EntityType="Self.HelperServices" Schema="SVC" store:Type="Tables" />
+    <EntitySet Name="HelperServiceScope" EntityType="Self.HelperServiceScope" Schema="SVC" store:Type="Tables" />
+    <EntitySet Name="Scopes" EntityType="Self.Scopes" Schema="SVC" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="SVC" store:Type="Tables" />
+    <EntitySet Name="Helpers" EntityType="Self.Helpers" Schema="USR" store:Type="Tables" />
+    <EntitySet Name="JobPrice" EntityType="Self.JobPrice" Schema="USR" store:Type="Tables" />
+    <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="USR" store:Type="Tables" />
+    <EntitySet Name="JobScope" EntityType="Self.JobScope" Schema="USR" store:Type="Tables" />
+    <EntitySet Name="JobServices" EntityType="Self.JobServices" Schema="USR" store:Type="Tables" />
+    <EntitySet Name="JobTime" EntityType="Self.JobTime" Schema="USR" store:Type="Tables" />
+    <EntitySet Name="Recievers" EntityType="Self.Recievers" Schema="USR" store:Type="Tables" />
+    <AssociationSet Name="FK_Carousels_Files_FileId" Association="Self.FK_Carousels_Files_FileId">
+      <End Role="Files" EntitySet="Files" />
+      <End Role="Carousels" EntitySet="Carousels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Carousels_Helpers_HelperId" Association="Self.FK_Carousels_Helpers_HelperId">
+      <End Role="Helpers" EntitySet="Helpers" />
+      <End Role="Carousels" EntitySet="Carousels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUsers_dbo_Locations_Locations_LocationId" Association="Self.FK_dbo_AspNetUsers_dbo_Locations_Locations_LocationId">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Notifications_dbo_AspNetUsers_ReceiverId" Association="Self.FK_dbo_Notifications_dbo_AspNetUsers_ReceiverId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Notifications_dbo_AspNetUsers_SenderId" Association="Self.FK_dbo_Notifications_dbo_AspNetUsers_SenderId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Notifications" EntitySet="Notifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserLogs_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_UserLogs_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="UserLogs" EntitySet="UserLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_Files_FileId" Association="Self.FK_Documents_Files_FileId">
+      <End Role="Files" EntitySet="Files" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_Helpers_HelperId" Association="Self.FK_Documents_Helpers_HelperId">
+      <End Role="Helpers" EntitySet="Helpers" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Favourates_Helpers_HelperId" Association="Self.FK_Favourates_Helpers_HelperId">
+      <End Role="Helpers" EntitySet="Helpers" />
+      <End Role="Favourates" EntitySet="Favourates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HelperServices_Helpers_HelperId" Association="Self.FK_HelperServices_Helpers_HelperId">
+      <End Role="Helpers" EntitySet="Helpers" />
+      <End Role="HelperServices" EntitySet="HelperServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HelperServices_Locations" Association="Self.FK_HelperServices_Locations">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="HelperServices" EntitySet="HelperServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HelperServices_Services_ServiceId" Association="Self.FK_HelperServices_Services_ServiceId">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="HelperServices" EntitySet="HelperServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HelperServiceScope_HelperScopes_ScopeId" Association="Self.FK_HelperServiceScope_HelperScopes_ScopeId">
+      <End Role="Scopes" EntitySet="Scopes" />
+      <End Role="HelperServiceScope" EntitySet="HelperServiceScope" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HelperServiceScope_HelperServices_HelprServiceId" Association="Self.FK_HelperServiceScope_HelperServices_HelprServiceId">
+      <End Role="HelperServices" EntitySet="HelperServices" />
+      <End Role="HelperServiceScope" EntitySet="HelperServiceScope" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_JobLocation_JobLocationId" Association="Self.FK_Jobs_JobLocation_JobLocationId">
+      <End Role="JobLocation" EntitySet="JobLocation" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_Price_PriceId" Association="Self.FK_Jobs_Price_PriceId">
+      <End Role="JobPrice" EntitySet="JobPrice" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Jobs_Times_TimeId" Association="Self.FK_Jobs_Times_TimeId">
+      <End Role="JobTime" EntitySet="JobTime" />
+      <End Role="Jobs" EntitySet="Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobScope_JobService_JobServiceId" Association="Self.FK_JobScope_JobService_JobServiceId">
+      <End Role="JobServices" EntitySet="JobServices" />
+      <End Role="JobScope" EntitySet="JobScope" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobScope_Scope_ScopeId" Association="Self.FK_JobScope_Scope_ScopeId">
+      <End Role="Scopes" EntitySet="Scopes" />
+      <End Role="JobScope" EntitySet="JobScope" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobServices_Job_JobId" Association="Self.FK_JobServices_Job_JobId">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="JobServices" EntitySet="JobServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobServices_Serviecs_ServiceId" Association="Self.FK_JobServices_Serviecs_ServiceId">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="JobServices" EntitySet="JobServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recievers_Jobs_JobId" Association="Self.FK_Recievers_Jobs_JobId">
+      <End Role="Jobs" EntitySet="Jobs" />
+      <End Role="Recievers" EntitySet="Recievers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReviewAndRating_Helpers_HelperId" Association="Self.FK_ReviewAndRating_Helpers_HelperId">
+      <End Role="Helpers" EntitySet="Helpers" />
+      <End Role="ReviewAndRating" EntitySet="ReviewAndRating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReviewComments_Reviews_Reviewid" Association="Self.FK_ReviewComments_Reviews_Reviewid">
+      <End Role="ReviewAndRating" EntitySet="ReviewAndRating" />
+      <End Role="ReviewComments" EntitySet="ReviewComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scopes_Services_ServiceId" Association="Self.FK_Scopes_Services_ServiceId">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="Scopes" EntitySet="Scopes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

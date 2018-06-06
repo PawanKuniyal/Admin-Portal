@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Helpa.Service>
+
+@{
+    ViewBag.Title = "";
+}
+
+<br />
+<h3 style="color:blue;">Manage Services Secation</h3>
+<br />
+<br />
+
+
+
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+<link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+<link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<p class="btn btn-default" style="width:121px;">
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+       
+            <th>Action</th>
+       
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            <p class="tb_content">@Html.DisplayFor(modelItem => item.ServiceName)</p>
+        </td>
+        <td>
+            @{
+
+            var buttonColor = "";
+            var buttonName = "";
+            if (item.Status == true)
+            {
+                buttonColor = "red";
+                buttonName = "Enable";
+            }
+            else
+            {
+                buttonColor = "green";
+                buttonName = "Disbale";
+            }
+            }
+            <a class="btn btn-default" href="/ManageServicesSection/Status?id=@item.ServiceId" style="color:@buttonColor">@buttonName</a> @*@Html.DisplayFor(modelItem => item.Status)*@
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+       
+       
+    <td>
+        <a class="btn btn-default" @Html.ActionLink("Edit", "Edit", new { id = item.ServiceId })
+                    <a class="btn btn-default" @Html.ActionLink("Details", "Details", new { id = item.ServiceId })
+                     <a class="btn btn-default" @Html.ActionLink("Delete", "Delete", new { id = item.ServiceId },  new { onclick = "return confirm('Are You sure wants to delete?');" })
+    </td>
+    </tr>
+    }
+
+</table>
+

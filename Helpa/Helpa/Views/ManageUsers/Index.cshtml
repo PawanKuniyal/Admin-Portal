@@ -1,0 +1,194 @@
+﻿@model List<Helpa.Models.Test>
+
+@{
+    dynamic Test = "";
+
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
+    grid.Bind(source: Model, rowCount: ViewBag.TotalRows, autoSortAndPage: false);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @*<link href="~/AdminALTcss/_all-skins.min.css" rel="stylesheet" />
+    <link href="~/AdminALTcss/AdminLTE.css" rel="stylesheet" />
+    <link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/AdminALTcss/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />*@
+
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <link href="~/logincss/style.css" rel="stylesheet" />
+</head>
+<body>
+  
+
+    <div class="container">
+        <h3 style="color:blue;">Manage User's</h3>
+
+
+        @*<nav class="navbar-collapse header">*@
+        @*<div class="container-fluid">*@
+
+        @*<div class="navbar-header">Search</div>*@
+        @*</div>*@
+
+        <div>
+
+            @using (Html.BeginForm("Index", "ManageUsers", FormMethod.Get))
+    {
+        @*<div class="form-group">*@
+        <input type="text" name="search" value="@ViewBag.search" class="form-container" placeholder="User Name" />
+        @*</div>*@
+        <button type="submit" value="search" class="btn btn-default">search</button>
+        
+}
+            @using (Html.BeginForm("Export", "ManageUsers", FormMethod.Get))
+    {
+        
+        <button type="submit" class="btn btn-default" style="margin-left:1050px;" value="search">ExportCSV</button>
+}
+
+        </div>
+
+
+
+
+
+
+        @*</nav>*@
+
+        <div>
+
+            @grid.Table(
+  tableStyle: "table table-responsive table-bordered",
+  columns: grid.Columns(
+  grid.Column(columnName: "UserName", header: "User Name"),
+   grid.Column(columnName: "Email", header: "Email"),
+   grid.Column(columnName:"DeviceName",header:"Device Name"),
+    grid.Column(columnName: "LoginTime", header: "Last Login"),
+     
+//grid.Column(columnName: "Id", header: "Id"),
+        @*grid.Column(format:@<text><a href="/manageusers/edit?id=@item.Id">Edit</a> </text>, header: "Update", style: "text-center"),*@
+grid.Column(format:@<text><a class="btn btn-default" href="/manageusers/ViewProfile?id=@item.Id">View</a> </text>, header: "View", style: "text-center"),
+         
+grid.Column(format:@<text><a class="btn btn-default" href="/manageusers/Status?id=@item.Id" style="color:@item.ButtonColor">@item.ButtonText</a> </text>, header: "Status", style: "text-center")
+
+
+
+
+                @*grid.Column("ID", format: @<text><span class="display-mode">@item.Id</span><label id="UserID" class="edit-mode">@item.Id</label></text>,
+            style: "col1Width"),*@
+                @*grid.Column("UserName", "UserName", format: @<text><span class="display-mode"><label id="lblUserName">@item.UserName</label></span>
+            <input type="text" id="UserName" value="@item.UserName" class="edit-mode" /></text>, style: "col2Width"),
+            grid.Column("Email", "Email", format: @<text> <span class="display-mode"><label id="lblLastName">@item.Email</label></span>
+            <input type="text" id="Email" value="@item.Email" class="edit-mode" /></text>, style: "col2Width"),
+            grid.Column("Action", format: @<text>
+                    <button class="edit-user display-mode">Edit</button>
+                    <button class="save-user edit-mode">Save</button>
+                    <button class="cancel-user edit-mode">Cancel</button>
+            </text>, style: "col3Width", canSort: false)*@
+
+
+        )
+        )
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+
+                    @*@Html.ActionLink("ChangeProfile", "ControllerName", null, new { type = "button" })||
+                @Html.ActionLink("Admin create color/style/label", "ControllerName", null, new { type = "button" })*@
+                </div>
+            </div>
+            @Html.Hidden("dir", grid.SortDirection)
+            @Html.Hidden("col", grid.SortColumn)
+
+        </div>
+
+
+    </div>
+    <script>
+        function Edit(data) {
+            debugger;
+            var id = data.parentElement.previousElementSibling.innerText;
+            $.ajax({
+                url: "@Url.Action("Edit", "ManageUsers")",
+                type: "get",
+                data: { "id": id },
+            success: function (data) {
+
+            }
+        })
+        }
+
+ 
+
+    </script>
+    <script>
+
+            $(function () {
+                try {
+                    var dir = $('#dir').val();
+                    var col = $('#col').val();
+                    var header = $('th a[href*="' + col + "]");
+                    if (dir == "Ascending") {
+                        header.text(header.text + "-")
+                    }
+                    if (dir == "Desciding") {
+                        header.text(header.text + "-")
+                    }
+
+                } catch (e) {
+                }
+            });
+
+            function ExporttoCSV() {
+                debugger;
+                $.ajax({
+                    url: "@Url.Action("Export", "ManageUsers")",
+                    type: "post",
+                    data: {},
+                    success: function (data) {
+
+                    }
+                });
+            }
+
+            function ViewProfile() {
+                debugger;
+                $.ajax({
+                    url: "@Url.Action("ViewProfile", "ManageUsers")",
+                    type: "post",
+                data: {},
+                success: function (data) {
+
+                }
+            });
+        }
+        function ViewProfile() {
+                debugger;
+                $.ajax({
+                    url: "@Url.Action("Device", "ManageUsers")",
+                    type: "post",
+                data: {},
+                success: function (data) {
+
+                }
+            });
+            }
+
+    </script>
+</body>
+</html>

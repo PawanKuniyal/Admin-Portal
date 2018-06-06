@@ -1,0 +1,83 @@
+﻿@model Helpa.AspNetUser
+    @using (Html.BeginForm("ViewProfile", "ManageUsers", FormMethod.Post))
+
+    {
+        <br />
+        <br />
+<div>
+    <h3 style="color:blue;">Manage User's</h3>
+    <hr />
+
+    <link href="~/logincss/style.css" rel="stylesheet" />   
+    <link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />
+    <link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/AdminALTcss/table.css" rel="stylesheet" />
+    
+    <table class="container">
+        <thead>
+            <tr>
+                <th><h1 style="color:white">Name</h1></th>
+                <th><h1 style="color:white">Value</h1></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @*<tr>
+                <td>@Html.DisplayNameFor(model => model.RowStatus)</td>
+                <td>@Html.DisplayFor(model => model.RowStatus)</td>
+
+            </tr>*@
+            @*<tr>
+                <td>@Html.DisplayNameFor(model => model.GenderId)</td>
+                <td>@Html.DisplayFor(model => model.GenderId)</td>
+
+            </tr>*@
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.ProfileImage)</td>
+                <td>@Html.DisplayFor(model => model.ProfileImage)</td>
+
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Description)</td>
+                <td>@Html.DisplayFor(model => model.Description)</td>
+
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Email)</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+
+            </tr>
+           
+
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.PhoneNumber)</td>
+                <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+
+            </tr>
+
+          
+
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.UserName)</td>
+                <td>@Html.DisplayFor(model => model.UserName)</td>
+
+            </tr>
+
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Location.LocationName)</td>
+                <td>@Html.DisplayFor(model => model.Location.LocationName)</td>
+
+            </tr>
+
+
+        </tbody>
+    </table>
+
+   
+</div>
+    }
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+   <a class="btn btn-default" style="width:147px; margin-left:130px;" @Html.ActionLink("Back to List", "Index")
+</p>

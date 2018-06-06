@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Helpa.AspNetUser>
+
+@{ 
+//Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<script src="~/Scripts/jquery-3.2.1.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+</head>
+<body>
+  
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <span>Customer Name:</span> 
+       <input type="text" id="search" height="10px;" width="10px;" />
+        <input type="button" onclick="Search()" id="BtnSearch" value="Search" />
+        <br />
+        <br />
+        <div class="dataTables_wrapper" id="ajaxgird">
+
+        </div>
+    }
+</body>
+</html>
+
+<script type="text/javascript">
+    var tbl = new DataTable('ajaxgird');
+    tbl.accessUrl = "AdminView/Grid";
+    tbl.sortExpression = 'CityName';
+    tbl.deleteUrl = "admin/City/Delete";
+    tbl.bindEvents();
+    tbl.asynList();
+</script>
+<script>
+    function Search() {
+
+
+        var search = $("#search").val();
+        var URL = "AdminView/Grid"
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ search: search }),
+            url: _rootURL + URL,
+            success: function (result) {
+                $('#ajaxgird').html(result);
+                
+            },
+            error: function (request, status, error) {
+                // look for status of 401 and redirect to login
+                if (status == 403) {
+                    window.location = "/login/Step1";
+                }
+            }
+        });
+    }
+</script>
+

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Helpa.StaticPage>
+   
+
+@{
+    ViewBag.Title = "";
+}
+
+<br />
+<br />
+<h3 style="color:blue;">Static Pages Management</h3>
+<br />
+<br />
+<link href="~/AdminALTcss/bootstrap.min.css" rel="stylesheet" />
+<link href="~/AdminALTcss/ionicons.min.css" rel="stylesheet" />
+@*<link href="~/AdminALTcss/table.css" rel="stylesheet" />*@
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PageTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageContent)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageTitle)
+        </td>
+        <td>
+            <p class="tb_content">@Html.DisplayFor(modelItem => item.PageContent)</p>
+</td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedDate)
+        </td>
+        <td>
+            <a class="btn btn-default" @Html.ActionLink("Edit", "Edit", new { id = item.StaticPageId }) 
+            <a class="btn btn-default" @Html.ActionLink("Details", "Details", new { id = item.StaticPageId }) 
+           
+        </td>
+    </tr>
+}
+
+</table>

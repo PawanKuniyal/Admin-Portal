@@ -1,0 +1,50 @@
+﻿@using Helpa.Models
+<aside class="main-sidebar">
+    <section class="sidebar">
+       
+        <ul class="sidebar-menu" data-widget="tree">
+            @*<li class="header">HEADER</li>*@
+            <li>
+                <a href="@Url.Action("Index", "ManageUsers")"><i class="fa fa-link"></i> <span>Manage User</span></a>
+            </li>
+            
+            <li>
+                <a href="@Url.Action("Index", "Jobs")"><i class="fa fa-link"></i> <span>View Job Post</span></a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "ManageServicesSection")"><i class="fa fa-link"></i> <span>Manage Service Secation</span></a>
+            </li>
+           
+            <li>
+                <a href="@Url.Action("Index", "ManageIDVerification")"><i class="fa fa-link"></i> <span>Manage ID Verification</span></a>
+            </li>
+           
+            <li>
+                <a href="@Url.Action("Chat", "MessagesConnections")"><i class="fa fa-link"></i> <span>Message and Successful</span></a>
+            </li>
+            @*<li>
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-link"></i> <span>Manage Review</span></a>
+            </li>*@
+            <li>
+                <a href="@Url.Action("Index", "StaticPagesManagement")"><i class="fa fa-link"></i> <span>Static Pages Management</span></a>
+            </li>
+            <li>
+                <a href="@Url.Action("Update", "Settings")"><i class="fa fa-link"></i> <span>Settings</span></a>
+            </li>
+            
+            @*<li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>Multilevel</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#">Link in level 2</a></li>
+                    <li><a href="#">Link in level 2</a></li>
+                </ul>
+            </li>*@
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>
